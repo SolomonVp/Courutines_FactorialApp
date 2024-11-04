@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.sumin.factorialtest.databinding.ActivityMainBinding
 
@@ -47,8 +46,8 @@ class MainActivity : AppCompatActivity() {
                     binding.progressBarLoading.visibility = View.VISIBLE
                     binding.buttonCalculate.isEnabled = false
                 }
-                is Result -> {
-                    binding.textViewFactorial.text = it.factorial
+                is Factorial -> {
+                    binding.textViewFactorial.text = it.value
                 }
             }
         }
